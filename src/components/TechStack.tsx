@@ -1,15 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Code2, 
-  Database, 
-  TestTube, 
-  Palette, 
-  Layers, 
-  Zap,
-  Package,
-  Globe
-} from 'lucide-react';
+import { Code2, Database, TestTube, Palette, Layers, Zap, Package, Globe } from 'lucide-react';
 
 const technologies = [
   { name: 'TypeScript', icon: Code2, category: 'Language' },

@@ -17,34 +17,18 @@ export const Counter = () => {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex items-center justify-center gap-4">
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => dispatch(decrement())}
-            className="h-12 w-12"
-          >
+          <Button variant="outline" size="icon" onClick={() => dispatch(decrement())} className="h-12 w-12">
             <Minus className="h-4 w-4" />
           </Button>
-          
-          <div className={styles.title}>
-            {count}
-          </div>
-          
-          <Button
-            variant="outline"
-            size="icon"
-            onClick={() => dispatch(increment())}
-            className="h-12 w-12"
-          >
+
+          <div className={styles.title}>{count}</div>
+
+          <Button variant="outline" size="icon" onClick={() => dispatch(increment())} className="h-12 w-12">
             <Plus className="h-4 w-4" />
           </Button>
         </div>
-        
-        <Button
-          variant="secondary"
-          onClick={() => dispatch(reset())}
-          className="w-full"
-        >
+
+        <Button variant="secondary" onClick={() => dispatch(reset())} className="w-full">
           <RotateCcw className="mr-2 h-4 w-4" />
           Reset
         </Button>

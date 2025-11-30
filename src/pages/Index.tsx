@@ -11,9 +11,7 @@ const Index = () => {
       <div className="container mx-auto px-4 py-12 space-y-12">
         {/* Header */}
         <header className="text-center space-y-4 animate-fade-in">
-          <h1 className="text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-            Web App Scaffold
-          </h1>
+          <h1 className="text-5xl font-bold bg-gradient-primary bg-clip-text text-transparent">Web App Scaffold</h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Production-ready stack with TypeScript, React, Redux, and modern tooling
           </p>
@@ -86,11 +84,7 @@ const Index = () => {
               description: 'Vitest configured with React Testing Library for comprehensive unit testing',
             },
           ].map((feature, i) => (
-            <Card 
-              key={feature.title} 
-              className="animate-fade-in"
-              style={{ animationDelay: `${0.4 + i * 0.1}s` }}
-            >
+            <Card key={feature.title} className="animate-fade-in" style={{ animationDelay: `${0.4 + i * 0.1}s` }}>
               <CardContent className="pt-6">
                 <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
                 <p className="text-sm text-muted-foreground">{feature.description}</p>

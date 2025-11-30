@@ -21,9 +21,9 @@ describe('Counter Component', () => {
     const { getByText } = render(
       <Provider store={store}>
         <Counter />
-      </Provider>
+      </Provider>,
     );
-    
+
     expect(getByText('0')).toBeInTheDocument();
   });
 
@@ -33,13 +33,13 @@ describe('Counter Component', () => {
     const { getByText, getAllByRole } = render(
       <Provider store={store}>
         <Counter />
-      </Provider>
+      </Provider>,
     );
-    
+
     const buttons = getAllByRole('button');
     const incrementButton = buttons[1]; // Plus button
     await user.click(incrementButton);
-    
+
     expect(getByText('1')).toBeInTheDocument();
   });
 
@@ -49,13 +49,13 @@ describe('Counter Component', () => {
     const { getByText, getAllByRole } = render(
       <Provider store={store}>
         <Counter />
-      </Provider>
+      </Provider>,
     );
-    
+
     const buttons = getAllByRole('button');
     const decrementButton = buttons[0]; // Minus button
     await user.click(decrementButton);
-    
+
     expect(getByText('-1')).toBeInTheDocument();
   });
 
@@ -65,19 +65,19 @@ describe('Counter Component', () => {
     const { getByText, getAllByRole } = render(
       <Provider store={store}>
         <Counter />
-      </Provider>
+      </Provider>,
     );
-    
+
     // Increment first
     const buttons = getAllByRole('button');
     const incrementButton = buttons[1];
     await user.click(incrementButton);
     await user.click(incrementButton);
-    
+
     // Then reset
     const resetButton = getByText('Reset');
     await user.click(resetButton);
-    
+
     expect(getByText('0')).toBeInTheDocument();
   });
 });
