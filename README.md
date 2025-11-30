@@ -1,73 +1,205 @@
-# Welcome to your Lovable project
+# Web App Scaffold
 
-## Project info
+A production-ready web application scaffold with a modern tech stack, designed for scalability and developer experience.
 
-**URL**: https://lovable.dev/projects/1bc86f12-226a-4d94-b1f1-8483f156afd7
+## 🚀 Tech Stack
 
-## How can I edit this code?
+### Core
+- **Language**: TypeScript
+- **Framework**: React 18 + Vite
+- **State Management**: Redux Toolkit
+- **Data Fetching**: React Query (TanStack Query)
 
-There are several ways of editing your application.
+### Styling
+- **CSS Framework**: Tailwind CSS
+- **CSS Preprocessor**: SCSS/Sass modules
+- **Component Library**: Shadcn UI
+- **Design System**: Fully customizable with semantic tokens
 
-**Use Lovable**
+### Testing
+- **Test Runner**: Vitest
+- **Testing Library**: React Testing Library
+- **Test UI**: Vitest UI
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/1bc86f12-226a-4d94-b1f1-8483f156afd7) and start prompting.
+### CMS
+- **Headless CMS**: Sanity.io (configured, awaiting credentials)
 
-Changes made via Lovable will be committed automatically to this repo.
+## 📁 Project Structure
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+src/
+├── components/          # React components
+│   ├── ui/             # Shadcn UI components
+│   ├── Counter.tsx     # Example Redux component
+│   └── TechStack.tsx   # Tech stack display
+├── store/              # Redux store
+│   ├── index.ts        # Store configuration
+│   ├── hooks.ts        # Typed Redux hooks
+│   └── slices/         # Redux slices
+├── styles/             # SCSS modules
+│   └── example.module.scss
+├── lib/                # Utilities & configs
+│   ├── utils.ts        # Helper functions
+│   └── sanity.ts       # Sanity.io client
+├── pages/              # Page components
+├── hooks/              # Custom React hooks
+└── test/               # Test setup
 ```
 
-**Edit a file directly in GitHub**
+## 🛠️ Setup
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Prerequisites
+- Node.js 18+ and npm
 
-**Use GitHub Codespaces**
+### Installation
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```bash
+# Install dependencies
+npm install
 
-## What technologies are used for this project?
+# Copy environment variables
+cp .env.example .env
 
-This project is built with:
+# Configure Sanity.io (optional)
+# Add your Sanity project ID and dataset to .env
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Development
 
-## How can I deploy this project?
+```bash
+# Start dev server
+npm run dev
 
-Simply open [Lovable](https://lovable.dev/projects/1bc86f12-226a-4d94-b1f1-8483f156afd7) and click on Share -> Publish.
+# Run tests
+npm run test
 
-## Can I connect a custom domain to my Lovable project?
+# Run tests with UI
+npm run test:ui
 
-Yes, you can!
+# Build for production
+npm run build
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# Preview production build
+npm run preview
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📦 Key Features
+
+### Redux Toolkit Setup
+- Fully typed with TypeScript
+- Example counter slice included
+- Custom typed hooks (`useAppDispatch`, `useAppSelector`)
+- Ready for additional slices
+
+### React Query Integration
+- Already configured in App.tsx
+- Ready for API calls and data fetching
+- Works seamlessly with Redux
+
+### Styling Options
+- **Tailwind**: Utility-first CSS with custom design tokens
+- **SCSS Modules**: Component-scoped styles with preprocessing
+- **Design System**: Semantic color tokens in `src/index.css`
+- Mix and match approaches as needed
+
+### Testing Setup
+- Vitest configured with jsdom environment
+- React Testing Library integrated
+- Example tests in `Counter.test.tsx`
+- Run `npm run test:ui` for interactive testing
+
+### Sanity.io
+- Client configured in `src/lib/sanity.ts`
+- Add credentials to `.env` file
+- Helper functions for image URLs included
+
+## 🎨 Design System
+
+The design system uses semantic tokens defined in `src/index.css`:
+
+```css
+--primary        # Main brand color
+--secondary      # Secondary UI elements
+--accent         # Accent/highlight color
+--background     # Page background
+--foreground     # Text on background
+--muted          # Muted elements
+--border         # Border colors
+```
+
+Custom gradients and animations are also available:
+- `bg-gradient-primary`
+- `bg-gradient-accent`
+- `shadow-elegant`
+- `animate-fade-in`
+- `animate-slide-in`
+
+## 📝 Using SCSS Modules
+
+```tsx
+import styles from '@/styles/example.module.scss';
+
+function MyComponent() {
+  return <div className={styles.container}>Content</div>;
+}
+```
+
+## 🔧 Adding Redux Slices
+
+1. Create a new slice in `src/store/slices/`
+2. Add to store configuration in `src/store/index.ts`
+3. Use typed hooks from `src/store/hooks.ts`
+
+## 🧪 Writing Tests
+
+Tests are co-located with components (`*.test.tsx`):
+
+```tsx
+import { describe, it, expect } from 'vitest';
+import { render } from '@testing-library/react';
+
+describe('MyComponent', () => {
+  it('renders correctly', () => {
+    const { getByText } = render(<MyComponent />);
+    expect(getByText('Hello')).toBeInTheDocument();
+  });
+});
+```
+
+## 🚢 Deployment
+
+Build the project:
+```bash
+npm run build
+```
+
+The `dist/` folder contains the production-ready application.
+
+Deploy to any static hosting service:
+- Vercel
+- Netlify
+- AWS S3 + CloudFront
+- GitHub Pages
+
+## 📚 Further Reading
+
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [React Query](https://tanstack.com/query/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vitest](https://vitest.dev/)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [Sanity.io](https://www.sanity.io/)
+
+## 🤝 Contributing
+
+This scaffold is designed to be customized for your specific needs. Feel free to:
+- Add/remove dependencies
+- Modify the design system
+- Customize the folder structure
+- Add additional tooling
+
+## 📄 License
+
+MIT
