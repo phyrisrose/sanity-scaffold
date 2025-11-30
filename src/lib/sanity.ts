@@ -1,25 +1,17 @@
-/* We have Sanity setup in a separate folder; this approach is recommended because
-The Studio is a standalone React app → easier to upgrade, deploy, and separate.
+import { createClient } from '@sanity/client';
+import { createImageUrlBuilder } from '@sanity/image-url';
 
-Keeps dependencies isolated (react versions can differ!).
-
-Matches the official Sanity docs and examples.
-*/
-
-// import { createClient } from '@sanity/client';
-
-// // Configure your Sanity client
-// // Replace with your actual project ID and dataset
-// export const sanityClient = createClient({
-//   projectId: process.env.VITE_SANITY_PROJECT_ID || 'your-project-id',
-//   dataset: process.env.VITE_SANITY_DATASET || 'production',
-//   useCdn: true, // set to `false` to bypass the edge cache
-//   apiVersion: '2024-01-01', // use current date (YYYY-MM-DD) to target the latest API version
-// });
+// Configure your Sanity client
+export const sanityClient = createClient({
+  projectId: import.meta.env.VITE_SANITY_PROJECT_ID || 'rsvncbtu',
+  dataset: import.meta.env.VITE_SANITY_DATASET || 'production',
+  useCdn: true,
+  apiVersion: '2024-01-01',
+});
 
 // Helper function to build image URLs
-// export const urlFor = (source: string) => {
-//   return `https://cdn.sanity.io/images/${sanityClient.config().projectId}/${
-//     sanityClient.config().dataset
-//   }/${source}`;
-// };
+const builder = createImageUrlBuilder(sanityClient);
+
+export const urlFor = (source: any) => {
+  return builder.image(source);
+};

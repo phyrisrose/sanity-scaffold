@@ -2,7 +2,8 @@ import { Counter } from '@/components/Counter';
 import { TechStack } from '@/components/TechStack';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import styles from '@/styles/example.module.scss';
 
 const Index = () => {
@@ -16,7 +17,13 @@ const Index = () => {
             Production-ready stack with TypeScript, React, Redux, and modern tooling
           </p>
           <div className="flex gap-4 justify-center pt-4">
-            <Button variant="default" size="lg" className="shadow-elegant">
+            <Button asChild variant="default" size="lg" className="shadow-elegant">
+              <Link to="/events">
+                <Calendar className="mr-2 h-4 w-4" />
+                View Events
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg">
               <Github className="mr-2 h-4 w-4" />
               View on GitHub
             </Button>
