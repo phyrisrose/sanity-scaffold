@@ -17,9 +17,4 @@ const sanityConfig = defineConfig({
   },
 })
 
-// Helper function to build image URLs
-export const urlFor = (source: string) => {
-  return `https://cdn.sanity.io/images/${sanityConfig.projectId}/${sanityConfig.dataset}/${source}`
-}
-
 export default sanityConfig

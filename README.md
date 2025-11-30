@@ -5,23 +5,27 @@ A production-ready web application scaffold with a modern tech stack, designed f
 ## 🚀 Tech Stack
 
 ### Core
+
 - **Language**: TypeScript
 - **Framework**: React 18 + Vite
 - **State Management**: Redux Toolkit
 - **Data Fetching**: React Query (TanStack Query)
 
 ### Styling
+
 - **CSS Framework**: Tailwind CSS
 - **CSS Preprocessor**: SCSS/Sass modules
 - **Component Library**: Shadcn UI
 - **Design System**: Fully customizable with semantic tokens
 
 ### Testing
+
 - **Test Runner**: Vitest
 - **Testing Library**: React Testing Library
 - **Test UI**: Vitest UI
 
 ### CMS
+
 - **Headless CMS**: Sanity.io (configured, awaiting credentials)
 
 ## 📁 Project Structure
@@ -49,6 +53,7 @@ src/
 ## 🛠️ Setup
 
 ### Prerequisites
+
 - Node.js 18+ and npm
 
 ### Installation
@@ -86,29 +91,34 @@ npm run preview
 ## 📦 Key Features
 
 ### Redux Toolkit Setup
+
 - Fully typed with TypeScript
 - Example counter slice included
 - Custom typed hooks (`useAppDispatch`, `useAppSelector`)
 - Ready for additional slices
 
 ### React Query Integration
+
 - Already configured in App.tsx
 - Ready for API calls and data fetching
 - Works seamlessly with Redux
 
 ### Styling Options
+
 - **Tailwind**: Utility-first CSS with custom design tokens
 - **SCSS Modules**: Component-scoped styles with preprocessing
 - **Design System**: Semantic color tokens in `src/index.css`
 - Mix and match approaches as needed
 
 ### Testing Setup
+
 - Vitest configured with jsdom environment
 - React Testing Library integrated
 - Example tests in `Counter.test.tsx`
 - Run `npm run test:ui` for interactive testing
 
 ### Sanity.io
+
 - Client configured in `src/lib/sanity.ts`
 - Add credentials to `.env` file
 - Helper functions for image URLs included
@@ -128,6 +138,7 @@ The design system uses semantic tokens defined in `src/index.css`:
 ```
 
 Custom gradients and animations are also available:
+
 - `bg-gradient-primary`
 - `bg-gradient-accent`
 - `shadow-elegant`
@@ -150,6 +161,13 @@ function MyComponent() {
 2. Add to store configuration in `src/store/index.ts`
 3. Use typed hooks from `src/store/hooks.ts`
 
+## 🎻 Sanity.io setup
+
+Sanity setup has two distinct pieces
+
+- Sanity Studio — this is what the editors use to create content. It lives in a standalone React application under `/studio`
+- Sanity client in the main application: it's set up to query the data lake using GROQ query language, and it contains all the pages and UI components to build the UI from
+
 ## 🧪 Writing Tests
 
 Tests are co-located with components (`*.test.tsx`):
@@ -169,6 +187,7 @@ describe('MyComponent', () => {
 ## 🚢 Deployment
 
 Build the project:
+
 ```bash
 npm run build
 ```
@@ -176,6 +195,7 @@ npm run build
 The `dist/` folder contains the production-ready application.
 
 Deploy to any static hosting service:
+
 - Vercel
 - Netlify
 - AWS S3 + CloudFront
@@ -195,6 +215,7 @@ Deploy to any static hosting service:
 ## 🤝 Contributing
 
 This scaffold is designed to be customized for your specific needs. Feel free to:
+
 - Add/remove dependencies
 - Modify the design system
 - Customize the folder structure
