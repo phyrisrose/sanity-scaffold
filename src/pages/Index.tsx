@@ -23,6 +23,11 @@ const Index = () => {
                 View Events
               </Link>
             </Button>
+            <Button asChild variant="secondary" size="lg">
+              <Link to="/events">
+                Sanity Demo
+              </Link>
+            </Button>
             <Button variant="outline" size="lg">
               <Github className="mr-2 h-4 w-4" />
               View on GitHub
