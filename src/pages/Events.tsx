@@ -3,6 +3,7 @@ import { sanityClient, urlFor } from '@/lib/sanity';
 import { format } from 'date-fns';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import { CalendarDays, MapPin, ExternalLink } from 'lucide-react';
 
 interface Event {
@@ -18,6 +19,7 @@ interface Event {
   };
   headline: {
     name: string;
+    photo?: any;
   };
   image: any;
   tickets?: string;
@@ -31,7 +33,7 @@ const fetchUpcomingEvents = async (): Promise<Event[]> => {
     date,
     doorsOpen,
     venue->{name, city, country},
-    headline->{name},
+    headline->{name, photo},
     image,
     tickets
   }`;
@@ -86,8 +88,14 @@ const Events = () => {
                 <CardHeader>
                   <CardTitle>{event.name}</CardTitle>
                   {event.headline && (
-                    <CardDescription className="text-base">
-                      Featuring: {event.headline.name}
+                    <CardDescription className="flex items-center gap-2 text-base">
+                      <Avatar className="h-8 w-8">
+                        {event.headline.photo && (
+                          <AvatarImage src={urlFor(event.headline.photo).width(100).height(100).url()} alt={event.headline.name} />
+                        )}
+                        <AvatarFallback>{event.headline.name.charAt(0)}</AvatarFallback>
+                      </Avatar>
+                      <span>Featuring: {event.headline.name}</span>
                     </CardDescription>
                   )}
                 </CardHeader>
