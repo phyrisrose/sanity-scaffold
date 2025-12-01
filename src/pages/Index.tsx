@@ -20,11 +20,6 @@ const Index = () => {
             <Button asChild variant="default" size="lg" className="shadow-elegant">
               <Link to="/events">
                 <Calendar className="mr-2 h-4 w-4" />
-                View Events
-              </Link>
-            </Button>
-            <Button asChild variant="secondary" size="lg">
-              <Link to="/events">
                 Sanity Demo
               </Link>
             </Button>
