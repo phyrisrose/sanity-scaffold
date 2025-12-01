@@ -7,9 +7,8 @@ const sanityConfig = defineConfig({
   name: 'default',
   title: 'Demo project',
 
-  /** @todo the env variable is getting read, but an error still occurs */
-  projectId: process.env.SANITY_STUDIO_PROJECT_ID || 'rsvncbtu',
-  dataset: process.env.SANITY_STUDIO_DATASET || 'production',
+  projectId: process.env.SANITY_STUDIO_PROJECT_ID!,
+  dataset: process.env.SANITY_STUDIO_DATASET!,
 
   plugins: [structureTool(), visionTool()],
 
