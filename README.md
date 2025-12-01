@@ -119,9 +119,12 @@ npm run preview
 
 ### Sanity.io
 
-- Client configured in `src/lib/sanity.ts`
-- Add credentials to `.env` file
-- Helper functions for image URLs included
+Sanity setup has two distinct pieces
+
+- Sanity Studio — this is what the editors use to create content. It lives in a standalone React application under `/studio`
+- Sanity client in the main application: it's set up to query the data lake using GROQ query language, and it contains all the pages and UI components to build the UI from
+
+The credentials need to be added to `.env` files for each of the pieces separately
 
 ## 🎨 Design System
 
@@ -160,13 +163,6 @@ function MyComponent() {
 1. Create a new slice in `src/store/slices/`
 2. Add to store configuration in `src/store/index.ts`
 3. Use typed hooks from `src/store/hooks.ts`
-
-## 🎻 Sanity.io setup
-
-Sanity setup has two distinct pieces
-
-- Sanity Studio — this is what the editors use to create content. It lives in a standalone React application under `/studio`
-- Sanity client in the main application: it's set up to query the data lake using GROQ query language, and it contains all the pages and UI components to build the UI from
 
 ## 🧪 Writing Tests
 
